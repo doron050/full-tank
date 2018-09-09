@@ -1,5 +1,7 @@
 # React Material-UI seed
 
+delete this line
+
 [![Build Status](https://travis-ci.org/yaron1m/react-material-ui-seed.svg?branch=master)](https://travis-ci.org/yaron1m/react-material-ui-seed?branch=master)
 [![dependencies](https://david-dm.org/yaron1m/react-material-ui-seed.svg)](https://david-dm.org/yaron1m/react-material-ui-seed)
 [![devDependency Status](https://david-dm.org/yaron1m/react-material-ui-seed/dev-status.svg)](https://david-dm.org/yaron1m/react-material-ui-seed#info=devDependencies)
