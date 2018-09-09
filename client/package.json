@@ -1,5 +1,5 @@
 {
-  "name": "react-material-ui-seed",
+  "name": "full-tank",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -28,5 +28,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://yaron1m.github.io/react-material-ui-seed"
+  "homepage": "https://yaron1m.github.io/full-tank"
 }
