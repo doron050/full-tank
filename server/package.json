@@ -1,0 +1,14 @@
+{
+  "name": "full-tank",
+  "version": "1.0.0",
+  "description": "Server for full-tank app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "private": true,
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
