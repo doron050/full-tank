@@ -37,6 +37,12 @@ function LeftDrawer(props) {
                             </ListItemIcon>
                             <ListItemText primary="About"/>
                         </ListItem>
+                        <ListItem button onClick={() => props.history.push("/location")}>
+                            <ListItemIcon>
+                                <InfoIcon/>
+                            </ListItemIcon>
+                            <ListItemText primary="Location"/>
+                        </ListItem>
                     </List>
                 </div>
             </div>
