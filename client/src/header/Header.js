@@ -47,7 +47,7 @@ export default class Header extends React.Component {
                             <MenuIcon/>
                         </IconButton>
                         <Typography variant="title" color="inherit" style={styles.title}>
-                            Full Tank 22
+                            Full Tank
                         </Typography>
                         <Button color="inherit">Login</Button>
                     </Toolbar>
