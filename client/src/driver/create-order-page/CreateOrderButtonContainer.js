@@ -20,7 +20,7 @@ function mapDispatchToProps(dispatch, ownProps) {
             await dispatch(updateSelectedOrder('createdTime', new Date().toLocaleString()));
             const orderId = await dispatch(sendSelectedOrderToDatabase());
 
-            ownProps.history.push('/status-page/' + orderId)
+            ownProps.history.push('/order-status/' + orderId)
         }
     }
 }
