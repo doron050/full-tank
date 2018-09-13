@@ -1,7 +1,7 @@
 import {UPDATE_NAME} from "./ActionTypes";
 
 const initialState = {
-    name: null,
+    name: "Mark Z.",
 };
 
 export default (state = initialState, action) => {
