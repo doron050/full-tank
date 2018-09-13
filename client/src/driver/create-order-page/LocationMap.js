@@ -1,6 +1,7 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
-import googleApi from '../../consts/google-api';
+import googleApi from '../../consts/GoogleApi';
+import MapBeacon from './MapBeacon';
 
 export default function LocationMap(props){
     if(!props.isGeolocationAvailable){
@@ -15,15 +16,17 @@ export default function LocationMap(props){
         return <div>Searching for location</div>
     }
 
-
     return (
         <div style={{height: '500px', width: '500px', display: 'flex', justifyContent: 'center'}}>
             <GoogleMapReact
                 bootstrapURLKeys={{key: googleApi.apiKey}}
                 defaultCenter={{lat: props.coords.latitude, lng: props.coords.longitude}}
-                defaultZoom={11}
+                defaultZoom={15}
             >
-                {/*insert react component here*/}
+                <MapBeacon
+                    lat={props.coords.latitude}
+                    lng={props.coords.longitude}
+                />
             </GoogleMapReact>
         </div>
     )
