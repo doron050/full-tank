@@ -1,19 +1,25 @@
 import React from 'react';
-import LocationMap from './LocationMap';
+import LocationMap from './where/LocationMap';
 import CreateOrderButtonContainer from './CreateOrderButtonContainer';
 import {geolocated} from 'react-geolocated';
-import OrderTimePickerContainer from './OrderTimePickerContainer';
+import OrderTimePickerContainer from './when/OrderTimePickerContainer';
+import MainBox from './MainBox';
+import MaxPriceContainer from './how-much/MaxPriceContainer';
 
 function CreateOrderPage(props) {
     return (
         <div>
-            Create new order
+
+            <MainBox title="When?">
+                <OrderTimePickerContainer/>
+            </MainBox>
+
+            <MainBox title="How Much?">
+                <MaxPriceContainer/>
+            </MainBox>
+
 
             <LocationMap {...props} />
-
-            <div>
-                <OrderTimePickerContainer/>
-            </div>
 
             <CreateOrderButtonContainer {...props}/>
         </div>

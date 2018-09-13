@@ -13,6 +13,7 @@ export default function Routes() {
                 <Route path="/about" component={AboutPage}/>
 
                 {/*Driver*/}
+                <Route path={"/driver"} component={CreateOrderPageContainer}/>
                 <Route path={"/new-order"} component={CreateOrderPageContainer}/>
 
                 {/*Service provider*/}

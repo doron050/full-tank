@@ -1,6 +1,6 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
-import googleApi from '../../consts/GoogleApi';
+import googleApi from '../../../consts/GoogleApi';
 import MapBeacon from './MapBeacon';
 
 export default function LocationMap(props){
