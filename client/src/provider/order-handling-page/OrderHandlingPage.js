@@ -47,7 +47,7 @@ export default class OrderHandlingPage extends Component {
 
                 <MainBox title={'Order Details'}>
                     <div style={styles.orderDetailsBox}>
-                        <div>Last Fuel Time: <span style={{fontWeight: 'bold'}}>{this.props.selectedOrder.lastFuelTime}</span></div>
+                        <div>Last Fuel Time: <span style={{fontWeight: 'bold'}}>{new Date(this.props.selectedOrder.lastFuelTime).toLocaleDateString()}</span></div>
                         <div>Should Fill Full Tank: <span style={{fontWeight: 'bold'}}>{this.props.selectedOrder.isFullTank.toString()}</span></div>
 
                         {!this.props.selectedOrder.maxPrice &&
