@@ -27,7 +27,6 @@ export default function LocationMap(props) {
         };
 
     function renderOrder(order) {
-        console.log('order in:' + order.latitude + ', '+ order.longitude);
         return (
             <OrderBeacon
                 key={order.id}
