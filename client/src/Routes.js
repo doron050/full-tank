@@ -16,7 +16,7 @@ export default function Routes() {
                 {/*Driver*/}
                 <Route path={"/driver"} component={CreateOrderPageContainer}/>
                 <Route path={"/new-order"} component={CreateOrderPageContainer}/>
-                <Route path={"/pending-orders-page"} component={PendingOrdersPageContainer}/>
+                <Route path={"/pending-orders"} component={PendingOrdersPageContainer}/>
 
                 {/*Service provider*/}
             </App>

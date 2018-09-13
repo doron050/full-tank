@@ -5,7 +5,7 @@ import {getPendingOrders} from '../../store/orders/Selectors';
 
 function mapStateToProps(state) {
     return {
-        orders: getPendingOrders(state)
+        // orders: getPendingOrders(state)
     }
 }
 
