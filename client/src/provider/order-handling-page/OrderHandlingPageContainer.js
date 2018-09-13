@@ -4,6 +4,7 @@ import {getSelectedOrder, } from './../../store/selected-order/Selectors';
 import {getSelectedCar} from './../../store/selected-car/Selectors';
 import {sendSelectedOrderToDatabase, updateSelectedOrder} from "../../store/selected-order/Actions";
 import CarController from './../../util/CarController'
+import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state) => {
     return {
@@ -12,7 +13,7 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         onOpenLid: async () => {
             CarController(true);
@@ -23,8 +24,9 @@ const mapDispatchToProps = (dispatch) => {
             CarController(false);
             await dispatch(updateSelectedOrder('finishTime', new Date().toLocaleString()));
             dispatch(sendSelectedOrderToDatabase());
+            ownProps.history.push('/pending-orders');
         }
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OrderHandlingPage);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OrderHandlingPage));

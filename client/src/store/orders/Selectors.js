@@ -6,7 +6,7 @@ export function getOrders(state) {
 
 export function getPendingOrders(state) {
     const orders = _.map(getOrders(state));
-    return orders.filter(order => order.status === 'pending');
+    return orders.filter(order => !order.finishTime);
 }
 
 

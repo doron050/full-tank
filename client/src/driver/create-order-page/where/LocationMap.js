@@ -19,7 +19,7 @@ export default function LocationMap(props) {
     }
 
     const style = {
-        height: '350px',
+        height: '300px',
         width: 'auto',
         display: 'flex',
         justifyContent: 'center',
