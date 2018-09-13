@@ -1,19 +1,18 @@
 import {connect} from 'react-redux';
 import OrderHandlingPage from './OrderHandlingPage';
 import {getSelectedOrder} from './../../store/selected-order/Selectors';
-import {getCarById} from './../../store/cars/Selectors';
+import {getSelectedCar} from './../../store/selected-car/Selectors';
 
 const mapStateToProps = (state) => {
-    const selectedOrder = getSelectedOrder(state);
-    
     return {
-        selectedOrder: selectedOrder,
-        selectedCar: getCarById(state, selectedOrder.carNumber)
+        selectedOrder: getSelectedOrder(state),
+        selectedCar: getSelectedCar(state)
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        
         a: () => ""
     };
 };

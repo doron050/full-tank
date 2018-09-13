@@ -11,9 +11,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        onChange: (key, value) => {
-            dispatch(updateSelectedOrder(key, value))
-        }
+        onChange: (key, value) => dispatch(updateSelectedOrder(key, value))
     }
 }
 

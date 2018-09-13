@@ -21,8 +21,12 @@ export default function CarNumber(props) {
     return (
         <div style={style.box}>
             <div style={style.number}>
-                {props.carNumber}
+                {beutifyCarNumber(props.carNumber)}
             </div>
         </div>
     )
+}
+
+export function beutifyCarNumber(number){
+    return number.substr(0,2) + "-" + number.substr(2,3) + "-" + number.substr(5);
 }
