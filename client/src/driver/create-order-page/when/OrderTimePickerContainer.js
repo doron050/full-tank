@@ -12,6 +12,9 @@ function mapStateToProps(state) {
             style: {
                 fontSize: 30,
             },
+        },
+        style:{
+            width: 350
         }
     }
 }
