@@ -1,10 +1,13 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
 import thunkMiddleware from "redux-thunk";
 import {composeWithDevTools} from "redux-devtools-extension";
-import userInfoReducer from "./user-info/Reducer";
+import carsReducer from "./cars/Reducer";
+import ordersReducer from "./orders/Reducer";
+import {initFirebase} from './firebase/Actions';
 
 const combinedReducers = combineReducers({
-    userInfo: userInfoReducer
+    cars: carsReducer,
+    orders: ordersReducer,
 });
 
 const store = createStore(
@@ -15,5 +18,7 @@ const store = createStore(
         )
     )
 );
+
+store.dispatch(initFirebase());
 
 export default store;

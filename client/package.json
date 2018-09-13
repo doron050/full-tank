@@ -5,7 +5,9 @@
   "dependencies": {
     "@material-ui/core": "^3.0.1",
     "@material-ui/icons": "^3.0.1",
+    "firebase": "^5.4.2",
     "gh-pages": "^1.2.0",
+    "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
