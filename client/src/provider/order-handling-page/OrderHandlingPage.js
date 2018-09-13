@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import MainBox from "../../driver/create-order-page/MainBox";
 import FillCarNumber from "./FillCarNumber";
-import FormControl from "@material-ui/core/FormControl/FormControl";
-import InputLabel from "@material-ui/core/InputLabel/InputLabel";
-import Input from "@material-ui/core/Input/Input";
+import FuelAmountFilledContainer from "./fuel-amount-filled/FuelAmountFilledContainer";
 
 const styles = {
     carDetailsBox: {
@@ -52,21 +50,11 @@ export default class OrderHandlingPage extends Component {
                         <div>Last Fuel Time: <span style={{fontWeight: 'bold'}}>{this.props.selectedOrder.lastFuelTime}</span></div>
                         <div>Should Fill Full Tank: <span style={{fontWeight: 'bold'}}>{this.props.selectedOrder.isFullTank.toString()}</span></div>
 
-                        {this.props.selectedOrder.maxPrice &&
-                        <div>MaxPrice: <span style={{fontWeight: 'bold'}}>{this.props.selectedOrder.maxPrice}</span></div>
+                        {!this.props.selectedOrder.maxPrice &&
+                            <div>MaxPrice: <span style={{fontWeight: 'bold'}}>{this.props.selectedOrder.maxPrice}</span></div>
                         }
 
-                        <br/>
-                        <FormControl>
-                            <InputLabel>Liter Amount</InputLabel>
-                            <Input
-                                id="adornment-amount"
-                                value="1312"
-                                onChange={event => ''}
-                                disableUnderline={true}
-                                style={{fontSize: 30, textAlign: 'left'}}
-                            />
-                        </FormControl>
+                        <FuelAmountFilledContainer/>
                     </div>
                 </MainBox>
 
