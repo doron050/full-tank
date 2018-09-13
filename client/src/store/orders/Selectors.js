@@ -4,6 +4,12 @@ export function getOrders(state) {
     return state.orders;
 }
 
+export function getPendingOrders(state) {
+    const orders = getOrders(state);
+    return orders.filter(order => order.status === 'pending');
+}
+
+
 export function getOrderById(state, orderId) {
     return getOrders(state)[orderId];
 }
