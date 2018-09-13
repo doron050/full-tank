@@ -1,5 +1,6 @@
 import React from 'react';
 import LocationMap from './LocationMap';
+import CreateOrderButtonContainer from './CreateOrderButtonContainer';
 
 
 export default function CreateOrderPage(props) {
@@ -8,6 +9,8 @@ export default function CreateOrderPage(props) {
             Create new order
 
             <LocationMap {...props} />
+
+            <CreateOrderButtonContainer {...props}/>
         </div>
     )
 }
