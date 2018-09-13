@@ -4,12 +4,12 @@ import {selectOrder} from '../../store/selected-order/Actions';
 import PendingOrdersTable from './PendingOrdersTable';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import CarNumber from '../../driver/create-order-page/which-car/CarNumber';
-import React from 'react';
+import {getCarById} from '../../store/cars/Selectors';
+import {selectCar} from '../../store/selected-car/Actions';
 
 function mapStateToProps(state, ownProps) {
     if (!ownProps.coords)
-        return null;
+        return {};
 
     const orders = getPendingOrders(state);
     const rows = _.map(orders, order => {
@@ -17,8 +17,8 @@ function mapStateToProps(state, ownProps) {
             id: order.id,
             createdTime: order.createdTime,
             distance: calcCrow(ownProps.coords.latitude, ownProps.coords.longitude, order.latitude, order.longitude) + ' KM',
-            carNumber: <CarNumber carNumber={order.carNumber}/>,
-            driverPhone: order.driverPhone,
+            carNumber: order.carNumber,
+            driverPhone: getCarById(state,order.carNumber).driverPhone,
         };
     });
 
@@ -30,8 +30,9 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch, ownProps) {
     return {
-        onClick: (orderId) => {
+        onClick: (orderId, carNumber) => {
             dispatch(selectOrder(orderId));
+            dispatch(selectCar(carNumber));
             ownProps.history.push('/order-handling')
         }
     }

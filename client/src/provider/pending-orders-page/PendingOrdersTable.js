@@ -6,6 +6,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import _ from 'lodash';
+import CarNumber from '../../driver/create-order-page/which-car/CarNumber';
 
 export default function SimpleTable(props) {
     return (
@@ -33,11 +34,11 @@ function mapRow(row, onClick) {
         return null;
 
     return (
-        <TableRow key={row.id} onClick={() => onClick(row.id)}>
+        <TableRow key={row.id} onClick={() => onClick(row.id, row.carNumber)}>
             <TableCell>{row.id}</TableCell>
             <TableCell>{row.createdTime}</TableCell>
             <TableCell>{row.distance}</TableCell>
-            <TableCell>{row.carNumber}</TableCell>
+            <TableCell><CarNumber carNumber={row.carNumber}/></TableCell>
             <TableCell>{row.driverPhone}</TableCell>
         </TableRow>
     )

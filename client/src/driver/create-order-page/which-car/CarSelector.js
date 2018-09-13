@@ -31,7 +31,7 @@ export default class CarSelector extends React.Component {
                     <div style={{padding: 20}}>
                         {_.map(this.props.cars, car => {
                             return (
-                                <div style={{padding: 5}}>
+                                <div style={{padding: 5}} key={car.number}>
                                     <CarNumber
                                         key={car.number}
                                         carNumber={car.number}
