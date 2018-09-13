@@ -5,6 +5,7 @@ import HomePageContainer from "./pages/HomePageContainer";
 import AboutPage from "./pages/AboutPage";
 import CreateOrderPageContainer from './driver/create-order-page/CreateOrderPage';
 import PendingOrdersPageContainer from './provider/pending-orders-page/PendingOrdersPageContainer';
+import FillFuelPageContainer from './provider/fill-fuel-page/FillFuelPageContainer';
 
 export default function Routes() {
     return (
@@ -19,6 +20,7 @@ export default function Routes() {
                 <Route path={"/pending-orders-page"} component={PendingOrdersPageContainer}/>
 
                 {/*Service provider*/}
+                <Route path={"/fill-fuel"} component={FillFuelPageContainer}/>
             </App>
         </Router>
     );
