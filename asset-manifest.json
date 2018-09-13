@@ -1,7 +1,8 @@
 {
   "main.css": "static/css/main.9358d64d.css",
   "main.css.map": "static/css/main.9358d64d.css.map",
-  "main.js": "static/js/main.75685c07.js",
-  "main.js.map": "static/js/main.75685c07.js.map",
-  "static\\media\\map-marker-icon.png": "static/media/map-marker-icon.98930f0b.png"
+  "main.js": "static/js/main.ed8032e1.js",
+  "main.js.map": "static/js/main.ed8032e1.js.map",
+  "static\\media\\map-marker-icon.png": "static/media/map-marker-icon.98930f0b.png",
+  "static\\media\\markZ.jpg": "static/media/markZ.69df1d4e.jpg"
 }
