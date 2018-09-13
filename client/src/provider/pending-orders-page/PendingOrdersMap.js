@@ -1,4 +1,3 @@
-import React from 'react';
 import LocationMap from '../../driver/create-order-page/where/LocationMap';
 import {geolocated} from 'react-geolocated';
 
