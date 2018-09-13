@@ -15,12 +15,12 @@ function mapDispatchToProps(dispatch, ownProps) {
                 return;
             }
 
-
             await dispatch(updateSelectedOrder('latitude', ownProps.coords.latitude));
             await dispatch(updateSelectedOrder('longitude', ownProps.coords.longitude));
-            dispatch(sendSelectedOrderToDatabase());
+            await dispatch(updateSelectedOrder('createdTime', new Date().toLocaleString()));
+            const orderId = await dispatch(sendSelectedOrderToDatabase());
 
-            ownProps.history.push('/status-page')
+            ownProps.history.push('/order-status/' + orderId)
         }
     }
 }
@@ -29,9 +29,9 @@ function mergeProps(stateProps, dispatchProps) {
     return {
         variant: 'contained',
         color: 'primary',
-        children: "Fill her up!",
+        children: 'Fill her up!',
         style: {
-            width: "95%",
+            width: '95%',
             marginBottom: 20,
         },
 

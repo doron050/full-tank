@@ -1,11 +1,12 @@
-import React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import LeftDrawer from "./LeftDrawer";
+import React from 'react';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import LeftDrawer from './LeftDrawer';
+import MarkZ from './markZ.jpg'
+import Avatar from '@material-ui/core/Avatar';
 
 const styles = {
     root: {
@@ -13,7 +14,7 @@ const styles = {
         marginBottom: 20,
     },
     title: {
-        textAlign: "left",
+        textAlign: 'left',
         flexGrow: 1,
     },
     menuButton: {
@@ -49,7 +50,7 @@ export default class Header extends React.Component {
                         <Typography variant="title" color="inherit" style={styles.title}>
                             Full Tank
                         </Typography>
-                        <Button color="inherit">Login</Button>
+                        <Avatar alt="Mark" src={MarkZ} style={{margin: 10}}/>
                     </Toolbar>
                 </AppBar>
 

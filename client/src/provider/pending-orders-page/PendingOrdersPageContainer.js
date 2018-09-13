@@ -1,7 +1,7 @@
 import PendingOrdersPage from './PendingOrdersPage'
 import {connect} from 'react-redux';
 //import {sendSelectedOrderToDatabase, updateSelectedOrder} from '../../store/selected-order/Actions';
-import {getPendingOrders} from '../../store/orders/Selectors';
+//import {getPendingOrders} from '../../store/orders/Selectors';
 
 function mapStateToProps(state) {
     return {
