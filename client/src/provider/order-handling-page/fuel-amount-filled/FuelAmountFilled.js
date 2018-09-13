@@ -1,9 +1,6 @@
 import React from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import Input from '@material-ui/core/Input';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Switch from '@material-ui/core/Switch';
 import InputLabel from '@material-ui/core/InputLabel';
 
 export default function FuelAmountFilled(props) {

@@ -1,6 +1,6 @@
 import {getPendingOrders} from '../../store/orders/Selectors';
 import _ from 'lodash';
-import {selectOrder} from '../../store/selected-order/Actions';
+import {selectOrder, sendSelectedOrderToDatabase, updateSelectedOrder} from '../../store/selected-order/Actions';
 import PendingOrdersTable from './PendingOrdersTable';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
@@ -18,7 +18,7 @@ function mapStateToProps(state, ownProps) {
             createdTime: order.createdTime,
             distance: calcCrow(ownProps.coords.latitude, ownProps.coords.longitude, order.latitude, order.longitude) + ' KM',
             carNumber: order.carNumber,
-            driverPhone: getCarById(state,order.carNumber).driverPhone,
+            driverPhone: getCarById(state, order.carNumber).driverPhone,
         };
     });
 
@@ -30,10 +30,13 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch, ownProps) {
     return {
-        onClick: (orderId, carNumber) => {
+        onClick: async (orderId, carNumber) => {
             dispatch(selectOrder(orderId));
             dispatch(selectCar(carNumber));
-            ownProps.history.push('/order-handling')
+            ownProps.history.push('/order-handling');
+
+            await dispatch(updateSelectedOrder('onTheWayTime', new Date().toLocaleString()));
+            dispatch(sendSelectedOrderToDatabase());
         }
     }
 }

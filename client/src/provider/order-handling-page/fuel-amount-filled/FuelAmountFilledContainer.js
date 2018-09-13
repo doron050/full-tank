@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {updateSelectedOrder} from '../../../store/selected-order/Actions';
+import {sendSelectedOrderToDatabase, updateSelectedOrder} from '../../../store/selected-order/Actions';
 import {getSelectedOrder} from '../../../store/selected-order/Selectors';
 import FuelAmountFilled from './FuelAmountFilled';
 
@@ -11,7 +11,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        onChange: (key, value) => dispatch(updateSelectedOrder(key, value))
+        onChange: async (key, value) => {
+            await dispatch(updateSelectedOrder(key, value));
+            dispatch(sendSelectedOrderToDatabase());
+        }
     }
 }
 
