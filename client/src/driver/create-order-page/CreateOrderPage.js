@@ -5,7 +5,7 @@ import {geolocated} from 'react-geolocated';
 import OrderTimePickerContainer from './when/OrderTimePickerContainer';
 import MainBox from './MainBox';
 import MaxPriceContainer from './how-much/MaxPriceContainer';
-import CarNumber from './which-car/CarNumber';
+import CarNumberContainer from './which-car/CarNumberContainer';
 
 function CreateOrderPage(props) {
     return (
@@ -20,7 +20,7 @@ function CreateOrderPage(props) {
             </MainBox>
 
             <MainBox title="Which Car?">
-                <CarNumber carNumber="12-345-67"/>
+                <CarNumberContainer/>
             </MainBox>
 
             <MainBox title="Where?">

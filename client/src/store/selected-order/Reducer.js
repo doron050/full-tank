@@ -4,6 +4,7 @@ const initialState = {
     isFullTank: true,
     lastFuelTime: getTomorrow(),
     maxPrice: 50,
+    carNumber: "1234567"
 };
 
 export default (state = initialState, action = {}) => {

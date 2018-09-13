@@ -18,6 +18,7 @@ function mapDispatchToProps(dispatch, ownProps) {
             await dispatch(updateSelectedOrder('latitude', ownProps.coords.latitude));
             await dispatch(updateSelectedOrder('longitude', ownProps.coords.longitude));
             await dispatch(updateSelectedOrder('createdTime', new Date().toLocaleString()));
+            await dispatch(updateSelectedOrder('status', "Pending"));
             const orderId = await dispatch(sendSelectedOrderToDatabase());
 
             ownProps.history.push('/order-status/' + orderId)

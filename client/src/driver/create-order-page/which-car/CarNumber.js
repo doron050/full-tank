@@ -1,6 +1,9 @@
 import React from 'react';
 
 export default function CarNumber(props) {
+    if(!props.carNumber)
+        return null;
+
     const style = {
         number: {
             backgroundColor: 'rgb(255, 204, 0)',
@@ -18,10 +21,12 @@ export default function CarNumber(props) {
         }
     };
 
+    const number = props.carNumber.toString();
+
     return (
         <div style={style.box}>
             <div style={style.number}>
-                {props.carNumber}
+                {number.substr(0,2) + "-" + number.substr(2,3) + "-" + number.substr(5)}
             </div>
         </div>
     )
