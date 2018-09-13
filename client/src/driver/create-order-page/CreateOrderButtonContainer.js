@@ -2,7 +2,7 @@ import Button from '@material-ui/core/Button'
 import {connect} from 'react-redux';
 import {sendSelectedOrderToDatabase, updateSelectedOrder} from '../../store/selected-order/Actions';
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps() {
     return {
 
     }

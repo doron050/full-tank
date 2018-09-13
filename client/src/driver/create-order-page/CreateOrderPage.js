@@ -11,7 +11,9 @@ function CreateOrderPage(props) {
 
             <LocationMap {...props} />
 
-            <OrderTimePickerContainer/>
+            <div>
+                <OrderTimePickerContainer/>
+            </div>
 
             <CreateOrderButtonContainer {...props}/>
         </div>

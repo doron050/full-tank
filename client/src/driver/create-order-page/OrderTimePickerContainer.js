@@ -9,6 +9,9 @@ function mapStateToProps(state) {
         helperText: 'Last fuel time',
         type: 'time',
         value: getSelectedOrder(state).lastFuelTime ? getSelectedOrder(state).lastFuelTime : '',
+        style: {
+            margin: 20,
+        }
     }
 }
 

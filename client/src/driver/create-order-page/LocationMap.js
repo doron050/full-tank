@@ -17,7 +17,7 @@ export default function LocationMap(props){
     }
 
     return (
-        <div style={{height: '500px', width: '500px', display: 'flex', justifyContent: 'center'}}>
+        <div style={{height: '500px', width: 'auto', display: 'flex', justifyContent: 'center'}}>
             <GoogleMapReact
                 bootstrapURLKeys={{key: googleApi.apiKey}}
                 defaultCenter={{lat: props.coords.latitude, lng: props.coords.longitude}}
