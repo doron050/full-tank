@@ -8,9 +8,9 @@ import {
 import {sendDataToDatabase} from '../firebase/Actions';
 import {getCarById} from '../cars/Selectors';
 
-export function selectCar(carId) {
+export function selectCar(carNumber) {
     return function selectCar(dispatch, getState) {
-        const car = getCarById(getState(), carId);
+        const car = getCarById(getState(), carNumber);
         dispatch({
             type: SELECT_CAR,
             payload: car

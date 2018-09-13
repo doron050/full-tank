@@ -16,18 +16,21 @@ export default function CarNumber(props) {
         },
         box: {
             fontSize: 30,
-            margin:"auto",
-            width:"50%"
+            textAlign: "center",
         }
     };
 
     const number = props.carNumber.toString();
 
     return (
-        <div style={style.box}>
+        <div style={style.box} onClick={props.onClick}>
             <div style={style.number}>
-                {number.substr(0,2) + "-" + number.substr(2,3) + "-" + number.substr(5)}
+                {beutifyCarNumber(number)}
             </div>
         </div>
     )
+}
+
+export function beutifyCarNumber(number){
+    return number.substr(0,2) + "-" + number.substr(2,3) + "-" + number.substr(5);
 }
