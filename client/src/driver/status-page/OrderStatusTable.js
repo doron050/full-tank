@@ -21,7 +21,7 @@ export default function SimpleTable(props) {
                     {getRow("We are on the way", props.onTheWayTime)}
                     {getRow("We are here", props.arrivalTime)}
                     {getRow("Done!", props.finishTime)}
-                    {getRow("Order details", props.orderSummary)}
+                    {getRow("Gas filled", props.fuelAmountFilled)}
                 </TableBody>
             </Table>
         </Paper>
