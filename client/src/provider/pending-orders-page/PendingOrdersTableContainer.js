@@ -4,6 +4,8 @@ import {selectOrder} from '../../store/selected-order/Actions';
 import PendingOrdersTable from './PendingOrdersTable';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
+import CarNumber from '../../driver/create-order-page/which-car/CarNumber';
+import React from 'react';
 
 function mapStateToProps(state, ownProps) {
     if (!ownProps.coords)
@@ -14,8 +16,8 @@ function mapStateToProps(state, ownProps) {
         return {
             id: order.id,
             createdTime: order.createdTime,
-            distance: calcCrow(ownProps.coords.latitude, ownProps.coords.longitude, order.latitude, order.longitude).toString() + " KM",
-            carNumber: order.carNumber,
+            distance: calcCrow(ownProps.coords.latitude, ownProps.coords.longitude, order.latitude, order.longitude) + ' KM',
+            carNumber: <CarNumber carNumber={order.carNumber}/>,
             driverPhone: order.driverPhone,
         };
     });
@@ -50,7 +52,7 @@ function calcCrow(lat1, lon1, lat2, lon2) {
         Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const d = R * c;
-    return d;
+    return (Math.ceil(d * 100) / 100).toString().substr(0, 6);
 }
 
 // Converts numeric degrees to radians

@@ -3,14 +3,17 @@ import PendingOrdersMapContainer from './PendingOrdersMapContainer';
 import PendingOrdersTableContainer from './PendingOrdersTableContainer';
 import {geolocated} from 'react-geolocated';
 
-function PendingOrdersPage(props){
+function PendingOrdersPage(props) {
     return (
         <div>
             <div style={{fontSize: 30}}>
                 Pending Orders
             </div>
 
-            <PendingOrdersMapContainer {...props}/>
+            <div style={{margin: 10}}>
+                <PendingOrdersMapContainer {...props}/>
+            </div>
+
 
             <PendingOrdersTableContainer {...props}/>
         </div>

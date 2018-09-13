@@ -2,6 +2,6 @@ export function getCars(state) {
     return state.cars;
 }
 
-export function getCarById(state, carId){
-    return getCars(state)[carId];
+export function getCarById(state, carNumber){
+    return getCars(state)[carNumber];
 }
