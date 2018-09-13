@@ -12,7 +12,7 @@ function mapStateToProps(state, ownProps) {
         onTheWayTime: getOrderById(state, ownProps.orderId).onTheWayTime,
         arrivalTime: getOrderById(state, ownProps.orderId).arrivalTime,
         finishTime: getOrderById(state, ownProps.orderId).finishTime,
-        fuelAmountFilled: getOrderById(state, ownProps.orderId).fuelAmountFilled + " Liters",
+        fuelAmountFilled: getOrderById(state, ownProps.orderId).fuelAmountFilled ? getOrderById(state, ownProps.orderId).fuelAmountFilled + " Liters" : null,
     }
 }
 
