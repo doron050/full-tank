@@ -8,8 +8,7 @@ function mapStateToProps(state) {
         id: 'datetime-local',
         helperText: 'Last fuel time',
         type: 'time',
-        // defaultValue: "",
-        value: getSelectedOrder(state).lastFuelTime ? getSelectedOrder(state).lastFuelTime : '03:00',
+        value: getSelectedOrder(state).lastFuelTime ? getSelectedOrder(state).lastFuelTime : '',
     }
 }
 

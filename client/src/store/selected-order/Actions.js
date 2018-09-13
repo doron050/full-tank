@@ -6,7 +6,7 @@ import {
     UPDATE_SELECTED_ORDER
 } from './ActionTypes';
 import {sendDataToDatabase} from '../firebase/Actions';
-import {getOrderById} from '../orders/Selectors';
+import {getNextOrderId, getOrderById} from '../orders/Selectors';
 
 export function selectOrder(orderId) {
     return function selectCar(dispatch, getState) {
@@ -30,6 +30,10 @@ export function updateSelectedOrder(key, value) {
 
 export function sendSelectedOrderToDatabase() {
     return async function sendSelectedOrganizationToDatabase(dispatch, getState) {
+        if (!getSelectedOrder(getState()).hasOwnProperty("id")) {
+            await dispatch(updateSelectedOrder("id", getNextOrderId(getState())));
+        }
+
         const selectedOrder = getSelectedOrder(getState());
 
         return sendDataToDatabase('/orders/' + selectedOrder.id, selectedOrder);

@@ -1,6 +1,6 @@
 import Button from '@material-ui/core/Button'
 import {connect} from 'react-redux';
-import {updateSelectedOrder} from '../../store/selected-order/Actions';
+import {sendSelectedOrderToDatabase, updateSelectedOrder} from '../../store/selected-order/Actions';
 
 function mapStateToProps(state, ownProps) {
     return {
@@ -20,7 +20,7 @@ function mapDispatchToProps(dispatch, ownProps) {
 
             await dispatch(updateSelectedOrder('latitude', ownProps.coords.latitude));
             await dispatch(updateSelectedOrder('longitude', ownProps.coords.longitude));
-            //dispatch(sendSelectedOrderToDatabase());
+            dispatch(sendSelectedOrderToDatabase());
         }
     }
 }
