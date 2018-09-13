@@ -4,6 +4,7 @@ import App from "./App";
 import HomePageContainer from "./pages/HomePageContainer";
 import AboutPage from "./pages/AboutPage";
 import CreateOrderPageContainer from './driver/create-order-page/CreateOrderPage';
+import StatusPage from './driver/status-page';
 
 export default function Routes() {
     return (
@@ -15,6 +16,7 @@ export default function Routes() {
                 {/*Driver*/}
                 <Route path={"/driver"} component={CreateOrderPageContainer}/>
                 <Route path={"/new-order"} component={CreateOrderPageContainer}/>
+                <Route path={"/status-page/:orderId"} component={StatusPage}/>
 
                 {/*Service provider*/}
             </App>

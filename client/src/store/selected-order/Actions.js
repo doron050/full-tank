@@ -36,7 +36,8 @@ export function sendSelectedOrderToDatabase() {
 
         const selectedOrder = getSelectedOrder(getState());
 
-        return sendDataToDatabase('/orders/' + selectedOrder.id, selectedOrder);
+         sendDataToDatabase('/orders/' + selectedOrder.id, selectedOrder);
+         return selectedOrder.id;
     }
 }
 
