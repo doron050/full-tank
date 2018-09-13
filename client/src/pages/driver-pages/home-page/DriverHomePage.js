@@ -11,7 +11,7 @@ export default class DriverHomePage extends Component {
     render() {
         return (
             <div>
-                <div style={{fontSize: 24}}>Hello Dror!</div>
+                <div style={{fontSize: 24}}>{this.props.driverName}</div>
 
                 <div style={{paddingBottom: '10px', paddingTop: '10px'}}>
                     <img src='http://www.nexgenfuel.com/wp-content/uploads/2015/09/icon_gasStation_200-150x150.png'/>
@@ -26,6 +26,7 @@ export default class DriverHomePage extends Component {
 }
 
 DriverHomePage.propTypes = {
-    driverName: PropTypes.string,
-    car: PropTypes.object.isRequired,
+    cars: PropTypes.array.isRequired,
+    driverName: PropTypes.string.isRequired,
+    selectedCar: PropTypes.object.isRequired,
 };
