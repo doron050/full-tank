@@ -4,12 +4,15 @@ import {getOrderById} from '../../store/orders/Selectors';
 import OrderStatusTable from './OrderStatusTable';
 
 function mapStateToProps(state, ownProps) {
-    if(!getOrderById(state, ownProps.orderId))
+    if (!getOrderById(state, ownProps.orderId))
         return <div> Loading</div>;
 
     return {
         createdTime: getOrderById(state, ownProps.orderId).createdTime,
-        startedTime: getOrderById(state, ownProps.orderId).startedTime,
+        onTheWayTime: getOrderById(state, ownProps.orderId).onTheWayTime,
+        arrivalTime: getOrderById(state, ownProps.orderId).arrivalTime,
+        finishTime: getOrderById(state, ownProps.orderId).finishTime,
+        orderSummary: getOrderById(state, ownProps.orderId).orderSummary,
     }
 }
 

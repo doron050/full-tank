@@ -17,8 +17,11 @@ export default function SimpleTable(props) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {getRow("Created", props.createdTime)}
-                    {getRow("Started", props.startedTime)}
+                    {getRow("Created order", props.createdTime)}
+                    {getRow("We are on the way", props.onTheWayTime)}
+                    {getRow("We are here", props.arrivalTime)}
+                    {getRow("Done!", props.finishTime)}
+                    {getRow("Order details", props.orderSummary)}
                 </TableBody>
             </Table>
         </Paper>
