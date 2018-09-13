@@ -30,7 +30,7 @@ function mapDispatchToProps(dispatch, ownProps) {
     return {
         onClick: (orderId) => {
             dispatch(selectOrder(orderId));
-            ownProps.history.push('/fill-fuel')
+            ownProps.history.push('/order-handling')
         }
     }
 }

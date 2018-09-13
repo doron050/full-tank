@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import FillFuelPage from './FillFuelPage';
+import OrderHandlingPage from './OrderHandlingPage';
 
 const mapStateToProps = (state) => {
     return {
@@ -29,4 +29,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FillFuelPage);
+export default connect(mapStateToProps, mapDispatchToProps)(OrderHandlingPage);

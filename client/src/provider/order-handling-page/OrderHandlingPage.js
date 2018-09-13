@@ -23,7 +23,7 @@ const styles = {
     }
 };
 
-export default class FillFuelPage extends Component {
+export default class OrderHandlingPage extends Component {
 
     constructor(props) {
         super(props);
