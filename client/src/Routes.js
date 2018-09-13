@@ -4,7 +4,7 @@ import App from "./App";
 import HomePageContainer from "./pages/HomePageContainer";
 import AboutPage from "./pages/AboutPage";
 import LocationPage from './pages/LocationPage';
-import CreateOrderPageContainer from './driver/create-order-page';
+import CreateOrderPageContainer from './driver/create-order-page/CreateOrderPage';
 
 export default function Routes() {
     return (
