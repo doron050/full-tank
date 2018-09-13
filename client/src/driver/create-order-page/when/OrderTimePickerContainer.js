@@ -4,7 +4,6 @@ import {updateSelectedOrder} from '../../../store/selected-order/Actions';
 import {getSelectedOrder} from '../../../store/selected-order/Selectors';
 
 function mapStateToProps(state) {
-    console.log( getSelectedOrder(state).lastFuelTime);
     return {
         type: 'datetime-local',
         value: getSelectedOrder(state).lastFuelTime,
