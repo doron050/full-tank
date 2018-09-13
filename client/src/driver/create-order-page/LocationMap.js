@@ -1,5 +1,6 @@
 import React from 'react';
-
+import GoogleMapReact from 'google-map-react';
+import googleApi from '../../consts/google-api';
 
 export default function LocationMap(props){
     if(!props.isGeolocationAvailable){
@@ -16,29 +17,14 @@ export default function LocationMap(props){
 
 
     return (
-        <table>
-            <tbody>
-            <tr>
-                <td>latitude</td>
-                <td>{props.coords.latitude}</td>
-            </tr>
-            <tr>
-                <td>longitude</td>
-                <td>{props.coords.longitude}</td>
-            </tr>
-            <tr>
-                <td>altitude</td>
-                <td>{props.coords.altitude}</td>
-            </tr>
-            <tr>
-                <td>heading</td>
-                <td>{props.coords.heading}</td>
-            </tr>
-            <tr>
-                <td>speed</td>
-                <td>{props.coords.speed}</td>
-            </tr>
-            </tbody>
-        </table>
+        <div style={{height: '500px', width: '500px', display: 'flex', justifyContent: 'center'}}>
+            <GoogleMapReact
+                bootstrapURLKeys={{key: googleApi.apiKey}}
+                defaultCenter={{lat: props.coords.latitude, lng: props.coords.longitude}}
+                defaultZoom={11}
+            >
+                {/*insert react component here*/}
+            </GoogleMapReact>
+        </div>
     )
 }
