@@ -17,7 +17,7 @@ const styles = {
 
 function LeftDrawer(props) {
     return (
-        <Drawer open={props.open} onClose={props.onClose}>
+        <Drawer open={props.open} onClose={props.onClose} anchor="right">
             <div
                 tabIndex={0}
                 role="button"
