@@ -13,10 +13,13 @@ function mapStateToProps(state, ownProps) {
 
     const orders = getPendingOrders(state);
     const rows = _.map(orders, order => {
+        const distance = calcCrow(ownProps.coords.latitude, ownProps.coords.longitude, order.latitude, order.longitude);
+        const distanceString = distance.toString().substr(0, 6) + ' KM';
         return {
             id: order.id,
             createdTime: order.createdTime,
-            distance: calcCrow(ownProps.coords.latitude, ownProps.coords.longitude, order.latitude, order.longitude) + ' KM',
+            distance: distanceString,
+            sorter: distance,
             carNumber: order.carNumber,
             driverPhone: getCarById(state, order.carNumber).driverPhone,
         };
@@ -24,7 +27,7 @@ function mapStateToProps(state, ownProps) {
 
 
     return {
-        rows
+        rows: _.orderBy(rows, x => x.sorter)
     }
 }
 
@@ -56,7 +59,7 @@ function calcCrow(lat1, lon1, lat2, lon2) {
         Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const d = R * c;
-    return (Math.ceil(d * 100) / 100).toString().substr(0, 6);
+    return Math.ceil(d * 100) / 100;
 }
 
 // Converts numeric degrees to radians
