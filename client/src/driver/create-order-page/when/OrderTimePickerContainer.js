@@ -14,7 +14,7 @@ function mapStateToProps(state) {
             },
         },
         style:{
-            width: 350
+            width: 367
         }
     }
 }

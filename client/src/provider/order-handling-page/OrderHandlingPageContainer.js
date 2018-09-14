@@ -23,6 +23,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         onCompletedOrder: async () => {
             CarController(false);
             await dispatch(updateSelectedOrder('finishTime', new Date().toLocaleString()));
+            await dispatch(updateSelectedOrder('status', 'Done'));
             dispatch(sendSelectedOrderToDatabase());
             ownProps.history.push('/pending-orders');
         }

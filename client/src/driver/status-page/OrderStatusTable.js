@@ -20,8 +20,8 @@ export default function SimpleTable(props) {
                     {getRow("Created order", props.createdTime)}
                     {getRow("We are on the way", props.onTheWayTime)}
                     {getRow("We are here", props.arrivalTime)}
-                    {getRow("Done!", props.finishTime)}
                     {getRow("Gas filled", props.fuelAmountFilled)}
+                    {getRow("Done!", props.finishTime)}
                 </TableBody>
             </Table>
         </Paper>
