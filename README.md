@@ -14,6 +14,6 @@ The app already knows your location, and once you make an order - you will get l
 That simple!
 
 ## Authors
-**Doron Eli Rachman** - [LinkedIn](https://www.linkedin.com/in/doron-eli-rachman-218595b1/)
-**Dror Lapidot** - [LinkedIn](https://www.linkedin.com/in/dror-lapidot-22417b89/)
-**Yaron Malin** - [LinkedIn](https://www.linkedin.com/in/yaron-malin/)
+**Doron Eli Rachman** - [LinkedIn](https://www.linkedin.com/in/doron-eli-rachman-218595b1/)   
+**Dror Lapidot** - [LinkedIn](https://www.linkedin.com/in/dror-lapidot-22417b89/)   
+**Yaron Malin** - [LinkedIn](https://www.linkedin.com/in/yaron-malin/)   
